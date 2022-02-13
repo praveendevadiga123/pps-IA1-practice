@@ -2,26 +2,26 @@
 
 int input()
 {
-  int praveen;
-  printf("enter a number\n");
-  scanf("%d",&praveen);
-  return praveen;
-}
+  int n;
+  printf("enter a numaber\n");
+  scanf("%d",&n);
+  return n;
 
+}
 int cmp(int a,int b,int c)
 {
-  if(a>b && a>c)
+  if(a<b && a>c)
   return a;
   else if(b>c)
   return b;
   else
   return c;
 }
+
 void output(int a,int b,int c,int largest)
 {
-  printf("the largest number is %d\n",largest);
+  printf("the largest among all %d\n",largest);
 }
-
 int main()
 {
   int a,b,c,largest;

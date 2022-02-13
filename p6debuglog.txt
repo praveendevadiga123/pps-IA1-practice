@@ -1,0 +1,83 @@
+ 
+ gcc -g p6final.c
+ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x8ab: file p6final.c, line 47.
+(gdb) r
+Starting program: /home/runner/pps-IA1-practice/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p6final.c:47
+47  {
+(gdb) n
+50    input_two_strings(a,b);
+(gdb) s
+input_two_strings (a=0x7ffff00e4e4a "", b=0x7ffff00e4e59 "\006\200\265\330U")
+    at p6final.c:5
+5     printf("enter the two words\n");
+(gdb) n
+enter the two words
+6     scanf("%s",a);
+(gdb) n
+hello
+7     scanf("%s",b);
+(gdb) n
+world
+8   }
+(gdb) n
+main () at p6final.c:51
+51    k=str_cmp(a,b);
+(gdb) s
+str_cmp (a=0x7ffff00e4e4a "hello", b=0x7ffff00e4e59 "world") at p6final.c:13
+13    for(int k=0;k<n;k++)
+(gdb) n
+15      if(a[k]>b[k])
+(gdb) n
+20      if(a[k]==b[k])
+(gdb) n
+25        return 2;
+(gdb) n
+29  }
+(gdb) n
+main () at p6final.c:52
+52    output(a,b,k);
+(gdb) s
+output (a=0x7ffff00e4e4a "hello", b=0x7ffff00e4e59 "world", ans=2)
+    at p6final.c:32
+32    if(ans==1)
+(gdb) n
+37    if(ans==2)
+(gdb) n
+39      printf("%s is greater than %s\n",b,a);
+(gdb) n
+world is greater than hello
+45  }
+(gdb) n
+main () at p6final.c:53
+53    printf("%d",k);
+(gdb) n
+54  } 
+(gdb) n
+__libc_start_main (main=0x55d8b58008a3 <main>, argc=1, argv=0x7ffff00e4f58, 
+    init=<optimized out>, fini=<optimized out>, rtld_fini=<optimized out>, 
+    stack_end=0x7ffff00e4f48) at ../csu/libc-start.c:344
+344 ../csu/libc-start.c: No such file or directory.
+(gdb) c
+Continuing.
+2[Inferior 1 (process 187) exited normally]
+(gdb) 

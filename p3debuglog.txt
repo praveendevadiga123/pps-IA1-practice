@@ -1,3 +1,4 @@
+
  gcc -g p3final.c
  gdb a.out
 GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
@@ -99,4 +100,4 @@ main () at p3final.c:40
 (gdb) c
 Continuing.
 [Inferior 1 (process 46) exited normally]
-(gdb)
+(gdb) 

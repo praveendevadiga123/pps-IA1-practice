@@ -2,34 +2,29 @@
 
 int input_n()
 {
-  int x;
+  int n;
   printf("enter a number\n");
-  scanf("%d",&x);
-  return x;
+  scanf("%d",&n);
+  return n;
 }
-
 int sum_n(int n)
 {
   int sum=0;
-  for(int i=0;i<n;i++)
+  for(int i=0;i<=n;i++)
   {
-  sum=sum+i;
+    sum=sum+i; 
   }
   return sum;
-
 }
 void output(int n,int sum)
 {
-  
-  
   int i;
-  for(int i=0;i<n;i++);
+  for(i=0;i<n;i++)
   {
-    printf("%d+",i);
-  }
-  
-  printf("the sum n numbers %d is %d\n",n,sum);
+    printf("%d+\n",i);
 
+  }
+  printf("%d id %d\n",i,sum);
 }
 int main()
 {
@@ -38,5 +33,4 @@ int main()
   sum=sum_n(n);
   output(n,sum);
   return 0;
-
 }
